@@ -1,4 +1,6 @@
+(function(){
 "use strict";
+
 
 /**
  * TODO:
@@ -9,6 +11,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
+function sayHello(name) {
+    return "Hello " + name;
+}
+console.log(sayHello("Romeo Cohens"));
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -17,12 +24,18 @@
  * console.log 'helloMessage' to check your work
  */
 
+let helloMessage = sayHello("Romeo Cohens");
+console.log(helloMessage);
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+let myName = ("Romeo Cohens");
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -46,6 +59,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+function isTwo(number) {
+    return number === 2;
+}
+console.log(isTwo(1))
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -58,12 +77,20 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+function calculateTip(tipAmt, billAmt) {
+    // let totalAmt = ((billAmt * tipAmt) + billAmt);
+    return "You should tip: $" + parseFloat(billAmt) * parseFloat(tipAmt)
+}
+console.log(calculateTip(.15, 33.42));
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+alert(calculateTip(prompt( "How much would you like to tip?"), prompt("What was the total of your bill?")));
 
 /**
  * TODO:
@@ -79,3 +106,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(orgPrice, discountP) {
+    return (orgPrice - (orgPrice * discountP));
+}
+alert(applyDiscount(.2, 20))
+
+}())
