@@ -1,4 +1,6 @@
 //Day 3
+'use strict';
+
 (function(){}())
 
 function isString(input) {
@@ -44,9 +46,46 @@ const scopeTest = () => {
 console.log(weekDays)
 scopeTest();
 
+//Day 5
 
+let doWeHaveMilk = true;
 
+function makePunchBowlOfCereal() {
+    console.log("Chomping down on Sugar Smacks!");
+}
 
+function goToStore() {
+    console.log("Going to Auchan!")
+}
+
+let action = (doWeHaveMilk) ? makePunchBowlOfCereal() : goToStore();
+
+//console.log(action);
+
+//Ternary Operator
+
+function isItANumber(num)
+{
+    return (typeof num === "number") ? "That is a number!" : "That is not a number!";
+}
+    console.log(isItANumber(9))
+
+//Switch Statement Exercise
+
+function sandwichPreference(str) {
+    switch(str) {
+        case "olive loaf":
+            return "Congratulations on your bold choice!"
+        case "brisket":
+            return "Congratulations on choosing CORRECTLY!"
+        default:
+            return "Not huge on " + str + ", but hey whatever makes you happy.";
+    }
+}
+
+let str = prompt("Hey what kinda lunch meat do you like?").toLowerCase().trim();
+
+alert(sandwichPreference(str));
 
 
 
