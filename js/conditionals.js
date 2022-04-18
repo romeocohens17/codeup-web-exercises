@@ -56,20 +56,20 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor(color) {
-    switch (color) {
-        case "red":
-            return "Strawberries are red!"
-        case "blue":
-            return "Blue is the color of the sky!"
-        case "green":
-            return "Green is my favorite color too!"
-        default:
-            return "I'm not familiar with " + color + ".";
-    }
-}
-
-console.log(analyzeColor(randomColor))
+// function analyzeColor(color) {
+//     switch (color) {
+//         case "red":
+//             return "Strawberries are red!"
+//         case "blue":
+//             return "Blue is the color of the sky!"
+//         case "green":
+//             return "Green is my favorite color too!"
+//         default:
+//             return "I'm not familiar with " + color + ".";
+//     }
+// }
+//
+// console.log(analyzeColor(randomColor))
 
 /**
  * TODO:
@@ -103,23 +103,25 @@ console.log(analyzeColor(randomColor))
  * return value.
  */
 
-let luckyNumber = Math.floor(Math.random() * 6);
-function calculateTotal(discount, total) {
-    if (discount === 0) {
-        return "No Discount: $" + total;
-    } else if (discount === 1) {
-        return "$" + (total - (.10 * total));
-    } else if (discount === 2) {
-        return "$" + (total - (.25 * total));
-    } else if (discount === 3) {
-        return "$" + (total - (.35 * total));
-    } else if (discount === 4) {
-        return "$" + (total - (.50 * total));
-    } else if (discount === 5) {
-        return "FREE: $" + (0 * total);
-    }
-}
-console.log(calculateTotal(luckyNumber, 200))
+// let luckyNumber = Math.floor(Math.random() * 6);
+//
+// function calculateTotal(discount, total) {
+//     if (discount === 0) {
+//         return "No Discount: $" + total;
+//     } else if (discount === 1) {
+//         return "$" + (total - (.10 * total));
+//     } else if (discount === 2) {
+//         return "$" + (total - (.25 * total));
+//     } else if (discount === 3) {
+//         return "$" + (total - (.35 * total));
+//     } else if (discount === 4) {
+//         return "$" + (total - (.50 * total));
+//     } else if (discount === 5) {
+//         return "FREE: $" + (0 * total);
+//     }
+// }
+//
+// console.log(calculateTotal(luckyNumber, 200))
 
 /**
  * TODO:
@@ -132,11 +134,11 @@ console.log(calculateTotal(luckyNumber, 200))
 //Generate a random number between 0 and 6
 //var luckyNumber = Math.floor(Math.random() * 6);
 
-let checkout = prompt("What is your Total?").trim();
+// let checkout = prompt("What is your Total?").trim();
+//
+// let finalCheckout = calculateTotal(luckyNumber, checkout);
 
-let finalCheckout = calculateTotal(luckyNumber, checkout);
-
-alert("Your lucky number was " + luckyNumber + ", Your total before discount was $" + checkout + ", Your discounted total is " + finalCheckout + ".");
+// alert("Your lucky number was " + luckyNumber + ", Your total before discount was $" + checkout + ", Your discounted total is " + finalCheckout + ".");
 
 /**
  * TODO:
@@ -155,4 +157,42 @@ alert("Your lucky number was " + luckyNumber + ", Your total before discount was
  *
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
+ *
  */
+
+let userEntry = confirm("Would you like to enter a number?")
+
+if (userEntry) {
+    let numEntered = +prompt("Please enter a number?")
+    if (isNaN(numEntered)) {
+        alert("Not a number!")
+    } else {
+        (evenOrOdd(numEntered));
+        (plusHundo(numEntered));
+        (negOrPos(numEntered));
+    }
+}
+// console.log(userEntry(numEntered));
+
+function evenOrOdd(num) {
+    if(num  % 2 === 0 ) {
+        alert("The number you entered is even.");
+    } else {
+        if(num % 2 !== 0) {
+            alert("The number you entered is odd.");
+        }
+    }
+}
+
+function plusHundo (numPlusHundo) {
+    alert(numPlusHundo + 100);
+}
+
+function negOrPos (negPosEntry) {
+    if(negPosEntry > 0) {
+        alert("The number you entered is Positive!");
+    } else {
+        if(negPosEntry < 0)
+            alert("The number you entered is Negative!")
+    }
+}
