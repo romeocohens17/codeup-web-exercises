@@ -88,4 +88,14 @@ let str = prompt("Hey what kinda lunch meat do you like?").toLowerCase().trim();
 alert(sandwichPreference(str));
 
 
+// 04/21 - Loops
+
+while (true) {
+    let mom = confirm("Mom!?");
+    if (mom) {
+        break;
+    }
+}
+
+alert("hi...")
 
