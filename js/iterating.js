@@ -45,7 +45,7 @@
      */
 
 
-        //1.
+    //1.
     let fourPeoplesNames = ["Romeo", "Roman", "Romero", "Romello"];
 
     //2.
@@ -59,23 +59,37 @@
     //3.
     console.log(fourPeoplesNames);
 
+    console.log(fourPeoplesNames[0]);
+    console.log(fourPeoplesNames[1]);
+    console.log(fourPeoplesNames[2]);
+    console.log(fourPeoplesNames[3]);
+
     let index = 0
     for (let name of fourPeoplesNames) {
         console.log(name + " at index " + (index++));
     }
-    //for (let i = 0; i <fourPeoplesNames.length; i++) {
-    // console.log(fourPeoplesNames + " at index of " + i);
-    // }
+
+    for (let i = 0; i <fourPeoplesNames.length; i++) {
+        console.log(fourPeoplesNames + " at index of " + i);
+    }
 
     //4.
+
     for (let i = 0; i < fourPeoplesNames.length; i++) {
         console.log("The best names in order form best to decent are: " + fourPeoplesNames[i]);
+        //console.log(fourPeoplesNames[i]);
     }
 
     //5.
     fourPeoplesNames.forEach(function (fourPeoplesNames, index, array) {
         console.log("The name " + fourPeoplesNames + " can be found in the fourPeoplesNames array at the index of " + index + ". Here is the array: " + array);
     });
+
+    //forOf
+
+    for(let name of fourPeoplesNames) {
+        console.log(name);
+    }
 
     //6.
     function firstName(fourPeoplesNames) {
@@ -99,15 +113,15 @@
 
 
     function first(array) {
-        console.log(array(1));
+        return array[0];
     }
 
     function second(array) {
-        console.log(array(2));
+        return array[1];
     }
 
     function last(array) {
-        console.log(array(array.length - 1));
+        return array[array.length - 1];
     }
 
     first([1, 2, 3, 4, 5])
