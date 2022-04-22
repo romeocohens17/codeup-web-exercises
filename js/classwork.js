@@ -151,4 +151,11 @@
 
     animals.forEach(spiritAnimals)
 
+    //forOf //create an element for each variable * can't decrement with this method
+
+    let index = 0 // Method to iterate through array by calling variable in the console.log
+    for (let animal of animals) {
+        console.log(animal + " at index " + (index++));
+    }
+
 })();
