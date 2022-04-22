@@ -93,40 +93,48 @@
 
     //6.
     function firstName(fourPeoplesNames) {
-        console.log("The best name in the array is " + fourPeoplesNames[0].toUpperCase() + ".")
+        return "The best name in the array is " + fourPeoplesNames[0].toUpperCase() + ".";
     }
 
-    firstName(fourPeoplesNames);
+    console.log(firstName(fourPeoplesNames));
 
     function secondName(fourPeoplesNames) {
-        console.log("The second best name in the array is " + fourPeoplesNames[1].toUpperCase() + ".");
+        return "The second best name in the array is " + fourPeoplesNames[1].toUpperCase() + ".";
     }
 
-    secondName(fourPeoplesNames);
+    console.log(secondName(fourPeoplesNames));
 
     function butNotLeastName(fourPeoplesNames) {
         let lastNameInArray = fourPeoplesNames[fourPeoplesNames.length - 1]
-        console.log("The last but not least name in the array is " + lastNameInArray.toUpperCase() + ".");
+        return "The last but not least name in the array is " + lastNameInArray.toUpperCase() + ".";
     }
 
-    butNotLeastName(fourPeoplesNames);
+    console.log(butNotLeastName(fourPeoplesNames));
 
 
     function first(array) {
         return array[0];
     }
 
+    console.log(first(fourPeoplesNames));
+
     function second(array) {
         return array[1];
     }
+
+    console.log(second(fourPeoplesNames));
 
     function last(array) {
         return array[array.length - 1];
     }
 
-    first([1, 2, 3, 4, 5])
-    second([1, 2, 3, 4, 5])
-    last([1, 2, 3, 4, 5])
+    console.log(last(fourPeoplesNames));
+
+    let numbers = [1, 2, 3, 4, 5];
+
+    console.log(first(numbers));
+    console.log(second(numbers));
+    console.log(last(numbers));
 
 
 })();
