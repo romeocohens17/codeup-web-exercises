@@ -1,5 +1,3 @@
-"use strict";
-
 (function () {
     "use strict";
 
@@ -17,6 +15,13 @@
     console.log(person.firstName);
     console.log(person.lastName);
 
+    //const peroson2 = {};
+    //    person.firstName = "Romeo";
+    //    person.lastName = "Cohens";
+
+
+    //console.log(person2.firstName);
+    //console.log(person2.lastName);
 
     /**
      * TODO:
@@ -29,7 +34,7 @@
      */
 
     person.sayHello = function () {
-        return "Hello from " + person.firstName + " " + person.lastName;
+        return "Hello from " + person.firstName + " " + person.lastName + "!";
     }
     console.log(person.sayHello());
 
@@ -53,17 +58,6 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-
-    //shoppers.forEach(function(shopper) {
-    //   if (shopper.amount > 200) {
-    //       let qualify = "Yes, you do qualify for a 12% discount!";
-    //       let discountAmount = shopper.amount * .12;
-    //       let afterDiscount = shopper.amount * .88;
-    //       console.log(shopper.name + " your total is $" + shopper.amount + ". " + qualify + " The amount discounted is $" + discountAmount + ". " + "Your new total is $" + afterDiscount);
-    //   }else {
-    //       console.log(shopper.name + ", sorry, you don't qualify for a discount." + " Your total is $" + shopper.amount + ".");
-    //   }
-    //})
 
     shoppers.forEach(function (shopper) {
         if (shopper.amount > 200) {
@@ -141,18 +135,18 @@
      *   `showBookInfo` function.
      */
 
-   function createBook(title, author) {
-       let nameArray = author.split(' ');
-       let firstName = nameArray[0];
-       let lastName = nameArray[1];
-       return {
-           title: title,
-           author: {
-               firstName: firstName,
-               lastName: lastName,
-           }
-       }
-   }
+    function createBook(title, author) {
+        let nameArray = author.split(' ');
+        let firstName = nameArray[0];
+        let lastName = nameArray[1];
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName,
+            }
+        }
+    }
 
     let emptyArray = [];
 
@@ -161,7 +155,7 @@
     ]
 
     let author = [
-        "author1F author1L", "author2F author2L","author3F author3L"
+        "author1F author1L", "author2F author2L", "author3F author3L"
     ]
 
     for (let i = 0; i < title.length; i++) {
@@ -169,10 +163,58 @@
     }
 
     function showBookInfo(book, bookNumber) {
-        console.log("Book #" + (bookNumber +1) + '\n' + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("Book #" + (bookNumber + 1) + '\n' + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
     }
 
     emptyArray.forEach(showBookInfo);
     console.log(emptyArray);
+
+
+    function sports(team, athlete) {
+        let athleteNameArray = athlete.split(' ');
+        return {
+            team: teamName,
+            athlete: {
+                firstName: firstName,
+                lastName: lastName,
+            }
+        }
+
+    }
+
+    const sportsTeams = [
+        {team: "Patriots", athlete: {firstName: "Mac", lastName: "Jones"}},
+        {}
+    ]
+
+    //Classwork:
+
+    function createBookAgain(title, author) {
+        let authorArr = author.split(' ');
+        if (authorArr.length < 2) {
+            return {
+                title,
+                author: {
+                    firstName: " ",
+                    lastName: authorArr[0]
+                }
+            }
+        }else {
+            return{
+                title,
+                author: {
+                    firstName: authorArr[0],
+                    lastName: authorArr[1]
+                }
+            }
+        }
+    }
+
+    let titleAgain = prompt("Give me a title of a book!");
+    let authorAgain = prompt("And who wrote that!?");
+
+    let bookFromPrompt = createBookAgain(title, author);
+
+    console.log(bookFromPrompt);
 
 })();
