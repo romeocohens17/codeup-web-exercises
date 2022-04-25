@@ -30,9 +30,12 @@
      */
 
     let planetsWithBreaks = planetsArray.join("<br>");
-
     console.log(planetsWithBreaks);
 
     document.body.innerHTML += planetsWithBreaks;
+
+    let planetsUL = "<ul><li>" + planetsArray.join("</li><li>") + "</li><li>";
+
+    document.body.innerHTML += planetsUL;
 
 })();
