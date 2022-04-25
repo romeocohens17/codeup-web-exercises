@@ -12,10 +12,10 @@
      */
 
     planetsArray = planetsString.split("|");
-    const planetsArray2 = Array(planetsString);
+    //const planetsArray2 = Array(planetsString);
 
     console.log(planetsArray);
-    console.log(planetsArray2);
+    //console.log(planetsArray2);
 
 
     /**
@@ -29,6 +29,10 @@
      * string, and <li> tags around each planet.
      */
 
+    let planetsWithBreaks = planetsArray.join("<br>");
 
+    console.log(planetsWithBreaks);
+
+    document.body.innerHTML += planetsWithBreaks;
 
 })();
