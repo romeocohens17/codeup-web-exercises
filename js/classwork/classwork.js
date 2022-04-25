@@ -158,4 +158,6 @@
         console.log(animal + " at index " + (index++));
     }
 
+    console.log(animals.sort())
+
 })();

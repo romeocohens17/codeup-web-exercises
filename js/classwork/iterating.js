@@ -137,4 +137,18 @@
     console.log(last(numbers));
 
 
+    //Changing things within an array without changing values
+
+    const pizzas = ["pepperoni", "cheese", "meat lovers", "veggie", "hawaiian"];
+
+    pizzas.push("anchovy");
+
+    function logThePizzas() {
+        pizzas.forEach(function (pizza) {
+            console.log(pizza);
+        });
+    }
+
+    console.log(logThePizzas());
+
 })();
