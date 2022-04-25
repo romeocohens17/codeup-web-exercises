@@ -1,4 +1,4 @@
-(function(){
+(function () {
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -11,7 +11,12 @@
      * console.log planetsArray to check your work
      */
 
-    // console.log(planetsArray);
+    planetsArray = planetsString.split("|");
+    const planetsArray2 = Array(planetsString);
+
+    console.log(planetsArray);
+    console.log(planetsArray2);
+
 
     /**
      * TODO:
@@ -23,5 +28,7 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+
+
 
 })();
