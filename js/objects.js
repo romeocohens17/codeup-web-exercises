@@ -95,10 +95,10 @@
         {title: 'The Sacred Mushroom and The Cross', author: {firstName: 'John', lastName: 'Allegro'}}
     ];
 
-   // console.log(books[0].title);
-   // console.log(books[0].author.firstName);
-   // console.log(books[0].author.lastName);
-   // console.log(books[0].author);
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
+    // console.log(books[0].author);
 
     /**
      * TODO:
@@ -125,10 +125,9 @@
      *      ...
      */
 
-    books.forEach(function (book,index) {
-        console.log(createBook(book.title, book.author.firstName, book.author.lastName))
-//        console.log("Book #" + (index + 1) + '\n' + "Title: " + book.title + '\n' + "Author: " + book.author//.firstName + " " + book.author.lastName)
-    })
+    books.forEach(function (book, index) {
+        console.log("Book #" + (index + 1) + '\n' + "Title: " + book.title + '\n' + "Author: " + book.author.firstName + " " + book.author.lastName)
+    });
 
 
     /**
@@ -142,21 +141,38 @@
      *   `showBookInfo` function.
      */
 
-    function createBook (bookTitle, first, last) {
-        return [
-            {title: bookTitle, author: {
-                firstName: first, lastName: last
-                },
-            }
-        ];
+   function createBook(title, author) {
+       let nameArray = author.split(' ');
+       let firstName = nameArray[0];
+       let lastName = nameArray[1];
+       return {
+           title: title,
+           author: {
+               firstName: firstName,
+               lastName: lastName,
+           }
+       }
+   }
+
+    let emptyArray = [];
+
+    let title = [
+        "title1", "title2", "title3"
+    ]
+
+    let author = [
+        "author1F author1L", "author2F author2L","author3F author3L"
+    ]
+
+    for (let i = 0; i < title.length; i++) {
+        emptyArray.push(createBook(title[i], author[i]))
     }
 
-    console.log(createBook("Harry Potter", "JK", "Rowling"));
+    function showBookInfo(book, bookNumber) {
+        console.log("Book #" + (bookNumber +1) + '\n' + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + " " + book.author.lastName);
+    }
 
-    createBook.forEach(function(showBookInfo) {
-        console.log("Title: " + showBookInfo.title + '\n' + "Author: " + showBookInfo.author.firstName + " " + showBookInfo.author.lastName)
-    })
+    emptyArray.forEach(showBookInfo);
+    console.log(emptyArray);
 
-
-})
-();
+})();
