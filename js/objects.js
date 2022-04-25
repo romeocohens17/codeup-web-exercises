@@ -126,7 +126,8 @@
      */
 
     books.forEach(function (book,index) {
-        console.log("Book #" + (index + 1) + '\n' + "Title: " + book.title + '\n' + "Author: " + book.author.firstName + " " + book.author.lastName)
+        console.log(createBook(book.title, book.author.firstName, book.author.lastName))
+//        console.log("Book #" + (index + 1) + '\n' + "Title: " + book.title + '\n' + "Author: " + book.author//.firstName + " " + book.author.lastName)
     })
 
 
@@ -141,13 +142,20 @@
      *   `showBookInfo` function.
      */
 
-    function createBook () {
-        let bookTitle = (prompt("Please enter a title of a book"));
-        let bookAuthor = (prompt("What is the name of the author of this book?"))
-        console.log("Book #1" + '\n' + "Title: " + bookTitle + '\n' + "Author: " + bookAuthor)
+    function createBook (bookTitle, first, last) {
+        return [
+            {title: bookTitle, author: {
+                firstName: first, lastName: last
+                },
+            }
+        ];
     }
 
-    console.log(createBook());
+    console.log(createBook("Harry Potter", "JK", "Rowling"));
+
+    createBook.forEach(function(showBookInfo) {
+        console.log("Title: " + showBookInfo.title + '\n' + "Author: " + showBookInfo.author.firstName + " " + showBookInfo.author.lastName)
+    })
 
 
 })
