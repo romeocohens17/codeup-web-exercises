@@ -38,12 +38,57 @@ function evenOrOdd(input) {
 evenOrOdd()
 
 
-function byFiveEvenOrOdd(i) {
-    if(i === undefined) {
-        i = 100
+//function byFiveEvenOrOdd(i) {
+//    if(i === undefined) {
+//        i = 100
+//    }
+//    for (val = 1; val > 0; val -= i) {
+//        console.log(i)
+//    }
+//}
+//byFiveEvenOrOdd(100)
+
+//04/27
+
+//My Work
+//function arrayOfStrings(firstArray, secondArray) {
+//    let sportArray = firstArray.split(' ');
+//    let playerArray = secondArray.split(' ');
+//    return {
+//        firstArray: firstArray,
+//        SecondArray: {
+//            firstLetter: firstLetter,
+//        }
+//    }
+//}
+//
+//let emptyArray = [];
+//
+//let firstArray = [
+//    "football", "basketball", "volleyball"
+//]
+//
+//let secondArray = [
+//    "Brady", "lavine", "nobody"
+//]
+//
+//for (let i = 0; i < firstArray.length; i++) {
+//    emptyArray.push(arrayOfStrings(firstArray[i], secondArray[i]))
+//}
+//
+//function show(book, bookNumber) {
+//    console.log();
+//}
+//
+//Walk Through
+function allFirstLetters(arr) {
+    let bucket = "";
+    for (let str of arr) {
+        bucket += str[0];
+        //bucket += str.substring(0,1);
     }
-    for (val = 1; val > 0; val -= i) {
-        console.log(i)
-    }
+    return bucket;
 }
-byFiveEvenOrOdd(100)
+
+const testArrStrings = ['dog', 'cat', 'frog', 'bat'];
+console.log(allFirstLetters(testArrStrings));
