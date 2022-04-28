@@ -31,7 +31,7 @@ h3 {
     background-color: black;
 }
 #footer-link {
-    color: darkolivegreen;
+    color: blue;
 }
 #footer-link:hover {
     background-color: blue;
@@ -39,9 +39,6 @@ h3 {
 }
 #footer-link:visited {
     color: red;
-}
-#footer-link:active {
-    color: yellow;
 }
 html {
     background-color: black;
