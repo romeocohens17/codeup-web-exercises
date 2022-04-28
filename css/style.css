@@ -1,11 +1,23 @@
 .fancy-header {
-    color: blue;
-    font-style: italic;
+    color: #fda502;
+    font-family: 'Bangers', cursive;
+}
+
+#slogan {
+    font-family: 'Bangers', cursive;
+    color: white;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    color: #fda502;
 }
 
 h3 {
-    color: olivedrab;
-    font-family: "Comic Sans MS", sans-serif;
+    color: #fda502;
+    text-decoration: underline;
+    font-family: 'Bangers', cursive;
 }
 
 .supplies {
@@ -16,7 +28,7 @@ h3 {
 }
 
 #main-title {
-    background-color: rgba(69, 173, 69, 0.3);
+    background-color: black;
 }
 #footer-link {
     color: darkolivegreen;
@@ -30,6 +42,24 @@ h3 {
 }
 #footer-link:active {
     color: yellow;
+}
+html {
+    background-color: black;
+}
+
+body {
+    background-image: url("../img/black_sand.png");
+    background-size: cover;
+}
+table {
+    color: white;
+}
+ul, ol {
+    color: white;
+}
+
+body {
+    font-family: 'Bangers', cursive;
 }
 
 
