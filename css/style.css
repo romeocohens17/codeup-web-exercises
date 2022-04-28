@@ -1,4 +1,35 @@
 .fancy-header {
     color: blue;
-    text-decoration: underline;
+    font-style: italic;
 }
+
+h3 {
+    color: olivedrab;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.supplies {
+    list-style: square;
+}
+.process {
+    list-style: lower-roman;
+}
+
+#main-title {
+    background-color: rgba(69, 173, 69, 0.3);
+}
+#footer-link {
+    color: darkolivegreen;
+}
+#footer-link:hover {
+    background-color: blue;
+    color: white;
+}
+#footer-link:visited {
+    color: red;
+}
+#footer-link:active {
+    color: yellow;
+}
+
+
