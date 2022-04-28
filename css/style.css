@@ -1,23 +1,33 @@
 .fancy-header {
     color: #fda502;
     font-family: 'Bangers', cursive;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: xxx-large;
 }
 
 #slogan {
     font-family: 'Bangers', cursive;
     color: white;
     text-align: center;
+    font-size: x-large;
 }
 
-p {
+#guarantee {
     text-align: left;
     color: #fda502;
+    font-size: xx-large;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 h3 {
     color: #fda502;
     text-decoration: underline;
     font-family: 'Bangers', cursive;
+    font-size: xx-large;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .supplies {
@@ -29,6 +39,7 @@ h3 {
 
 #main-title {
     background-color: black;
+    background-image: linear-gradient(greenyellow, rgba(0, 0, 0, 0.5));
 }
 #footer-link {
     color: blue;
@@ -47,16 +58,24 @@ html {
 body {
     background-image: url("../img/black_sand.png");
     background-size: cover;
+    background-attachment: fixed;
 }
 table {
     color: white;
+    font-size: x-large;
 }
 ul, ol {
     color: white;
+    font-size: x-large;
 }
 
 body {
     font-family: 'Bangers', cursive;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-color: red;
 }
 
 
