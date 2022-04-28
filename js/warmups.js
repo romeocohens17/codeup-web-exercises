@@ -27,14 +27,15 @@ function evenOrOdd(input) {
     if (input === undefined) {
         input = 100
     }
-    for (let i =1; i <= 100; i++) {
+    for (let i = 1; i <= 100; i++) {
         if (i % 2 === 0) {
             console.log(i + " Even");
-        }else {
+        } else {
             console.log(i + " Odd");
         }
     }
 }
+
 evenOrOdd()
 
 
@@ -92,3 +93,24 @@ function allFirstLetters(arr) {
 
 const testArrStrings = ['dog', 'cat', 'frog', 'bat'];
 console.log(allFirstLetters(testArrStrings));
+
+//04/28
+//Write a function that takes in a string and returns that string in alphabetical order.
+
+function alphabeticalOrder(str) {
+    return str.split('').sort().join('');
+}
+
+console.log(alphabeticalOrder("codeup"));
+
+//Walk Through
+
+function alphabetize(str) {
+    let strArray = str.split('');
+    console.log(strArray);
+    let sortedArray = strArray.sort();
+    console.log(sortedArray);
+    return sortedArray.join('');
+}
+
+console.log(alphabetize("codeup"));
