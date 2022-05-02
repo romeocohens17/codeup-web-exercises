@@ -115,3 +115,25 @@ function alphabetize(str) {
 
 console.log(alphabetize("codeup"));
 
+//05/02
+
+function sumOfElements(arr) {
+    let bucket = 0;
+    for (let el of arr) {
+        bucket += el;
+    }
+    return bucket;
+}
+
+console.log(sumOfElements([1,2,3,4,5,6]));
+
+function amountTotal(amount) {
+    let total = 0;
+    for (let i = 0; i < amount.length; ++i) {
+        total += amount[i];
+    }
+    return total;
+}
+
+console.log(amountTotal([7,8,9,10]));
+
