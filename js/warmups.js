@@ -137,3 +137,46 @@ function amountTotal(amount) {
 
 console.log(amountTotal([7,8,9,10]));
 
+//05/03
+
+let product1 = {
+    name: 'Hammer',
+    priceInCents: 400,
+    description: 'It is a a hammer.',
+    inventory: 25034
+}
+
+let product2 = {
+    name: 'Computer',
+    priceInCents: 40000,
+    description: 'It is a computer.',
+    inventory: 33000
+}
+
+let product3 = {
+    name: 'Ruler',
+    priceInCents: 1000,
+    description: 'It is a ruler.',
+    inventory: 2200
+}
+
+function returnProductEssentialDetails(product) {
+   return {
+       name: product.name,
+       priceInCents: product.priceInCents
+   }
+}
+
+console.log(returnProductEssentialDetails(product1));
+console.log(returnProductEssentialDetails(product2));
+console.log(returnProductEssentialDetails(product3));
+
+let products = [product1, product2, product3];
+
+function returnAllProductEssentialDetails(products) {
+    let productsOutput = [];
+    products.forEach(function (product) {
+        productsOutput
+    });
+}
+
