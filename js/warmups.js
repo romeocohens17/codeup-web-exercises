@@ -177,6 +177,6 @@ function returnAllProductEssentialDetails(products) {
     let productsOutput = [];
     products.forEach(function (product) {
         productsOutput
-    });
+})
 }
 
