@@ -239,3 +239,6 @@ function mostColorfullest(hamsters) {
 console.log(mostColorfullest(hamsters));
 console.log(mostColorfullest(hamsters));
 
+
+
+
