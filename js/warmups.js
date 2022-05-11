@@ -256,4 +256,5 @@ function objectFromString(str) {
 }
 
 console.log(objectFromString("tacocat"));
+console.log(objectFromString("dip"));
 
