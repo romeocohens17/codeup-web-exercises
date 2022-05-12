@@ -55,3 +55,22 @@ function makeSandwich(arr1, arr2) {
     bucket.push(s1, s2)
 }
 console.log(makeSandwich(bread, fillings))
+
+
+
+let stringToAlphabetize = "HelloWrold";
+
+let splitString = stringToAlphabetize.split("");
+
+let sortSplitString = splitString.sort();
+
+let joinedString = sortSplitString.join();
+
+stringToAlphabetize.toLowerCase().split("").sort().join();
+
+function alphabetize(str) {
+    return str.toLowerCase().split("").sort().join();
+}
+
+console.log(alphabetize("SuperDuperTrooper"));
+
