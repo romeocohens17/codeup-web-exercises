@@ -1,7 +1,7 @@
 "use strict";
 
 
-//Arrays
+//Arrays from Udemy Start
 const friend1 = 'Michael';
 const friend2 = 'Jackie';
 const friend3 = 'Steven';
@@ -9,15 +9,43 @@ const friend3 = 'Steven';
 const friends = ['Michael', 'Jackie', 'Steven'];
 console.log(friends);
 
-const years = new Array(1994, 1997, 2000);
+const years = [1994, 1997, 2000];
 
 console.log(years);
 
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends.length - 1);
+
+friends[2] = 'Tom';
+console.log(friends);
+//friends = ['Bob', 'Alice']
+
+const firstName = 'Jonas'
+const jonas = [firstName, 'Schedtmann', 2037 - 1991, 'teacher', friends];
+
+let sorted = friends.map(function (value) {
+    return value.toLowerCase();
+}).sort();
+
+console.log(sorted);
+
+
+
+//Arrays from Udemy End
+
 function forOf(array) {
-    for(let friend of friends) {
-        return friend
+    for(let friend of array) {
+        if (friend.includes('a'))
+        console.log(friend);
     }
 }
+
+forOf(friends);
+
 
 function forLoop(array) {
     for (let i = 0; i < array.length; i++) {
@@ -54,6 +82,21 @@ function makeSandwich(arr1, arr2) {
     s2.fillings = arr2[2];
     bucket.push(s1, s2)
 }
+
+function forSandwich(arr1,arr2){
+    let allTheSandwiches = [];
+    for (let i=0; i < arr1.length && i < arr2.length; i++){
+        let sandwich ={
+            bread: arr1[i],
+            fillings: arr2[i]
+        }
+        allTheSandwiches.push(sandwich);
+    }
+    return allTheSandwiches;
+}
+
+console.log(forSandwich(bread, fillings));
+
 console.log(makeSandwich(bread, fillings))
 
 
