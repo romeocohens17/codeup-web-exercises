@@ -72,16 +72,15 @@
                 if (dbId == 1)listItems[i].style.color= "#0000FF";
             }
 
-
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         console.log(subParagraphs);
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!";
 
-        subParagraphs.setAttribute("lorem", "Mission Accomplished")
+        subParagraphs.item(0).innerHTML = 'Mission Accomplished'
 
     })();
 </script>
