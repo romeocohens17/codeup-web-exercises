@@ -80,9 +80,10 @@
 
         let listener3 = function () {
             for (let i = 0; i < listItems.length; i++) {
-                let dbId = listItems[i].getAttribute("data-dbid");
-                if (i % 2 === 0)listItems[i].style.color = "#808080";
-                if (dbId == 1)listItems[i].style.color = "#0000FF";
+                if (i % 2 === 0)
+                    listItems[i].style.color = "#808080";
+                if (listItems[i].getAttribute('data-dbid') === "1")
+                    listItems[i].style.color = "#0000FF";
             }
         }
 
