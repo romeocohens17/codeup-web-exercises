@@ -26,6 +26,7 @@
 </p>
 
 <script>
+
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
@@ -54,24 +55,28 @@
 
         // TODO: Set text color on every other list item to grey
 
-        listItems.item(0).style['color'] = '#808080'
-        listItems.item(2).style['color'] = '#808080'
-        listItems.item(4).style['color'] = '#808080'
+        for (let i = 0; i < listItems.length; i++) {
+            if (i % 2 === 0)
+                listItems[i].style.color = "#808080";
+        }
+
+        //Hard Code
+        // listItems.item(0).style['color'] = '#808080'
+        // listItems.item(2).style['color'] = '#808080'
+        // listItems.item(4).style['color'] = '#808080'
 
         // TODO: Set text color of li with dbid = 1 to blue
 
-        for (let i = 0; i < listItems.length; i++) {
-            let dbId = listItems[i].getAttribute("data-dbid");
-            console.log(dbId);
-        }
+            for (let i = 0; i < listItems.length; i++) {
+                let dbId = listItems[i].getAttribute("data-dbid");
+                if (dbId == 1)listItems[i].style.color= "#0000FF";
+            }
 
-        // listItems.style.color = '#0000FF'
-
-        // listItems.style.color = '#0000FF'
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
+
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
