@@ -63,6 +63,13 @@
     <button id="submitString">Add</button>
     <p id="madLib">Hello</p>
 </div>
+
+<!--<div class="colorChangeQuestion">-->
+<!--    <h1>Change the Color!</h1>-->
+<!--    <input type="text" id="color2" placeholder="Enter Color">-->
+<!--    <button id="changeColor2">Change Color!</button>-->
+<!--</div>-->
+
 <script>
 
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
@@ -81,6 +88,22 @@
             divs[i].style.color = answer;
         }
     }
+
+
+    //Same solution just different set up
+    let bg = function () {
+        let color = document.getElementById("color").value;
+        document.body.style.backgroundColor = color;
+    }
+
+    document.getElementById("changeColor").addEventListener("click", bg)
+
+    document.getElementById("changeColor").addEventListener("click", function () {
+        let color = document.getElementById("color").value;
+        document.body.style.backgroundColor = color;
+    })
+    //
+
 
 
 </script>
