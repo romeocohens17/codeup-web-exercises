@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Exercises</title>
+</head>
+<body>
+
+<header>
+<h1 id="header" class="codeup">JQuery</h1>
+</header>
+
+<main>
+<p id="lorem" class="codeup"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet culpa cumque debitis, dolor eligendi est facere harum ipsam labore minima neque obcaecati omnis perspiciatis porro quod suscipit vero voluptate? </p>
+<ul id="list" class="codeup">
+    <li id="list-item1" class="list-items-class">Uno</li>
+    <li id="list-item2" class="list-items-class">Dos</li>
+    <li id="list-item3" class="list-items-class">Tres</li>
+    <li id="list-item4" class="list-items-class">Cuatro</li>
+</ul>
+</main>
+
+<footer>
+<div id="footer" class="footer-btn">
+    <button type="submit">Submit</button>
+</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(function () {
+        // //Alerting for the Header
+        // alert($("#header").html() + " is your HTML Header.");
+        // //Alerting for the Paragraph
+        // alert("Your HTML body paragraph is: " + $("#lorem").html());
+        // //Alerting for the UL
+        // alert($("list").html());
+
+        $(".codeup").css("border", "1px solid #0051ff");
+
+        $("li").css("font-size", "20px");
+
+        $("h1, p, li").css("background-color", "#ef0");
+
+        alert($("h1").html());
+
+    });
+
+</script>
+
+</body>
+</html>
