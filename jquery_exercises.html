@@ -23,6 +23,10 @@
 <footer>
 <div id="footer" class="footer-btn">
     <button type="submit">Submit</button>
+    <p>Please type something into this form:</p>
+    <form>
+        <input type="text" id="textField" name="textField" placeholder="Type Here"/>
+    </form>
 </div>
 </footer>
 
@@ -63,6 +67,10 @@
                 $(this).css("color", "#000")
             }
         )
+
+        $('#textField').keyup(function() {
+            alert('A key was released!');
+        });
 
         // $('#header').hover(
         //     function() {
