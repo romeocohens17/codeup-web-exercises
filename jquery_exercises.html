@@ -44,6 +44,19 @@
 
         alert($("h1").html());
 
+        // $('#header').dblclick(function() {
+        //     alert('h1 with id "header" was clicked');
+        // });
+
+        $('#header').hover(
+            function() {
+                $(this).css('background-color', '#235151');
+            },
+            function() {
+                $(this).css('background-color', '#ef0');
+            }
+        );
+
     });
 
 </script>
