@@ -11,7 +11,7 @@
 
         .national-park {
             background-color: rgba(4, 119, 253, 0.51);
-            width: 250px;
+            color: white;
         }
     </style>
 
@@ -56,26 +56,25 @@
 <script src="/js/jquery-3.6.0.js"></script>
 <script>
     $(function () {
-    "use strict";
-        // $("dd").addClass("invisible");
+        "use strict";
 
-        $("button").click(function() {
+        $("button").click(function () {
             $("dd").toggleClass("invisible");
-        })
-
-        // $("dt").addClass("national-park");
-
-        $("dt").click(function() {
-            $(this).toggleClass("national-park");
         });
 
-        // $("dt").click(function () {
-        //     if ($(this).hasClass("national-park")) {
-        //         $(this).removeClass("national-park")
-        //     } else {
-        //         $(this).addClass("national-park")
-        //     }
-        // })
+        $("dd").each(function () {
+            if ($("dd").hasClass("invisible")) {
+                $(this).css("background-color", "#0fb784");
+            }
+        });
+
+        $("dt").click(function () {
+            $(this).toggleClass("national-park");
+        })
+
+
+        $("dt").parents().children("dd").css("color", "white");
+
 
     })
 </script>
