@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Faq</title>
+
+    <style>
+
+        .invisible {
+            display: none;
+        }
+
+        .national-park {
+            background-color: rgba(4, 119, 253, 0.51);
+            width: 250px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+
+<dl>
+    <dt>Yellowstone</dt>
+    <dd>Idaho, Montana, Wyoming</dd>
+    <br>
+    <dt>Yosemite</dt>
+    <dd>California</dd>
+    <br>
+    <dt>Glacier National Park</dt>
+    <dd>Montana</dd>
+    <br>
+    <dt>Grand Canyon</dt>
+    <dd>Arizona</dd>
+    <br>
+    <dt>Zion National Park</dt>
+    <dd>Utah</dd>
+    <br>
+    <dt>Grand Teton National Park</dt>
+    <dd>Wyoming</dd>
+    <br>
+    <dt>Bryce Canyon National Park</dt>
+    <dd>Utah</dd>
+    <br>
+    <dt>Arches National Park</dt>
+    <dd>Utah</dd>
+    <br>
+    <dt>Rocky Mountain National Park</dt>
+    <dd>Denver</dd>
+    <br>
+    <dt>Sequoia National Park</dt>
+    <dd>California</dd>
+</dl>
+
+<button class="toggle">Click</button>
+
+<script src="/js/jquery-3.6.0.js"></script>
+<script>
+    $(function () {
+
+        $("dd").addClass("invisible");
+
+        $("button").click(function() {
+            $("dd").toggleClass("invisible");
+        })
+
+        $("dt").addClass("national-park");
+
+        $("dt").click(function() {
+            $(this).toggleClass("national-park");
+        })
+
+    })
+</script>
+</body>
+</html>
