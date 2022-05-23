@@ -35,6 +35,9 @@ let sorted = friends.map(function (value) {
 
 console.log(sorted);
 
+friends.push('River');
+console.log(friends);
+
 //Exercise
 const calcAge = function (birthYear) {
     return 2037 - birthYear;
