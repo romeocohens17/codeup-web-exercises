@@ -150,22 +150,22 @@
         }
     });
 
+    //Warmup Question 4: hover over for message
 
-    // const toggleBtn = document.getElementById("toggleH1");
-    //
-    // function toggleFontSize() {
-    //     let h1s = document.getElementsByTagName("h1");
-    //     for (let h1 of h1s) {
-    //         if (h1.style.fontSize !== "10px") {
-    //             h1.style.fontSize = "10px";
-    //         } else {
-    //             h1.style.fontSize = "20px";
-    //         }
-    //     }
-    // }
-    //
-    // let h1IntervalId =
+    //nth-of-type
+    $(".question:nth-of-type(5)").mouseenter(function(){
+    alert("Congrats on your new cruise!")
+    });
 
+    //JQuery
+    $(".question").first().next().next().next().next().mouseenter(function(){
+        alert("Congrats on your new cruise!")
+    });
+
+    //Vanilla JS
+    document.getElementsByClassName("question")[4].addEventListener("mouseenter", function () {
+        alert("Congrats on your new cruise!")
+    });
 
 
 </script>
