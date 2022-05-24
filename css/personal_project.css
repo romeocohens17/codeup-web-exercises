@@ -1,7 +1,11 @@
 body {
-    background-color: #235151;
+    background-color: #abdca7;
 }
 
 .navbar {
-    background-color: black;
+    background-color: #323232;
+}
+
+.navbar-brand {
+    color: #afd91a;
 }
