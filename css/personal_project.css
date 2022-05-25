@@ -4,8 +4,21 @@ body {
 
 .navbar {
     background-color: #323232;
+    height: 55px;
+}
+
+.navbarSearch {
+    background-color: #323232;
+    height: 55px;
 }
 
 .navbar-brand {
     color: #afd91a;
+}
+
+.btn1 {
+    color: #FFFFFF;
+    border-radius: 4px;
+    background-color: #afd91a;
+    border-style: none;
 }
