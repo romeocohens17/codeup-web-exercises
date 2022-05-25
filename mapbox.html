@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+
+<div id='map' style='width: 75vw; height: 75vw; margin: auto'></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode-utils.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4946, 29.4252], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    const marker = new mapboxgl.Marker()
+        .setLngLat([-98.4896, 29.4269])
+        .addTo(map);
+
+    marker.setLngLat([-105.9378, 35.6870]);
+
+    const codeUp_popUp = new mapboxgl.Popup()
+    .setLngLat([-98.4896, 29.4269])
+    .setHTML("<p>Codeup Rocks!</p>")
+    .addTo(map);
+
+    const popUp = new mapboxgl.Popup()
+        .setHTML("<p>Im lost!</p>");
+
+    marker.setPopup(popUp);
+
+    geocode(("1510 Polk St, Houston, TX 77003"), MAPBOX_API_KEY).then
+    (function(data) {
+        console.log(data);
+        const popUp_toyota = new mapboxgl.Popup()
+        .setLngLat(data)
+        .setHTML("<p>This is where the Rockets play</p>")
+        .addTo(map);
+    })
+
+</script>
+
+</body>
+</html>
