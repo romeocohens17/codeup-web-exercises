@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/mapbox.css">
 </head>
 <body>
 <h1 id="place"></h1>
@@ -28,12 +29,12 @@
     // MARKER.setLngLat([-98.4896, 29.4269]);
 
     geocode("1510 Polk St, Houston, TX 77003", MAPBOX_API_KEY).then
-    (function(data) {
+    (function (data) {
         console.log(data);
         const POPUP_TOYOTA = new mapboxgl.Popup()
-        .setLngLat(data)
-        .setHTML("<p>This is where the Rockets play</p>")
-        .addTo(MAP);
+            .setLngLat(data)
+            .setHTML("<p>This is where the Rockets play</p>")
+            .addTo(MAP);
     });
 
     reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then
@@ -46,41 +47,106 @@
     MARKER.on("dragend", function () {
         LONG_LAT = MARKER.getLngLat();
         MAP.flyTo({center: [LONG_LAT.lng, LONG_LAT.lat]});
-        reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data){
+        reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
             document.getElementById('place').innerHTML = data;
         })
     });
+    ////////Favorite Food Spots Array
+    const FOOD_SPOTS = {
+            'type': 'FeatureCollection',
+            'features': [
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Anchor Bar',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.574063, 29.596055]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'The Shack',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.638165, 29.446055]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Seoul Food',
+                        'iconSize': [60, 60]
+                    },
+                   'geometry': {
+                        'type': 'Point',
+                       'coordinates': [-98.429527, 29.486555]
+                   }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Taquitos West Ave',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.52572, 29.486375]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Pho Kim Long',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.491401, 29.470555]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Thai Esan & Noodle House',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                       ' coordinates': [-98.588382, 29.534565]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': '2M Smokehouse',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.40465, 29.38156]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Lupe Tortilla',
+                        'iconSize': [60, 60]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-98.59992, 29.6125]
+                    }
+                }
+            ]
+        };
 
-    let foodSpots = [
-        {
-            name: "Anchor Bar",
-            coordinates: [-98.574063, 29.596055]
-        }, {
-            name: "The Shack",
-            coordinates: [-98.638165, 29.446055]
-        }, {
-            name: "Seoul Food",
-            coordinates: [-98.429527, 29.486555]
-        }, {
-            name: "Taquiots West Ave",
-            coordinates: [-98.52572, 29.486375]
-        }, {
-            name: "Pho Kim Long",
-            coordinates: [-98.491401, 29.470555]
-        }, {
-            name: "Thai Esan & Noodle House",
-            coordinates: [-98.588382, 29.534565]
-        }, {
-            name: "2M Smokehouse",
-            coordinates: [-98.40465, 29.38156]
-        }, {
-            name: "Lupe Tortilla",
-            coordinates: [-98.59992, 29.6125],
-            image: url
-        }
-    ];
-
-    foodSpots.forEach(function(foodSpot) {
+    foodSpots.forEach(function (foodSpot) {
         let marker = new mapboxgl.Marker()
             .setLngLat(foodSpot.coordinates)
             .addTo(MAP)
@@ -90,7 +156,6 @@
         marker.setPopup(popup)
             .addTo(MAP)
     })
-
 
     // Wings// Add markers to the map.
     // geocode("4553 N Loop 1604 W, San Antonio, TX 78249", MAPBOX_API_KEY).then
