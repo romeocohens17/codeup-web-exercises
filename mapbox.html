@@ -51,106 +51,150 @@
         })
     });
 
-    //Wings// Add markers to the map.
-    geocode("4553 N Loop 1604 W, San Antonio, TX 78249", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const WINGS = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the wings marker
-        const WING_POPUP = new mapboxgl.Popup()
-            .setHTML("Best Wings in San Antonio!")
-        WINGS.setPopup(WING_POPUP)
-    });
+    let foodSpots = [
+        {
+            name: "Anchor Bar",
+            coordinates: [-98.574063, 29.596055]
+        }, {
+            name: "The Shack",
+            coordinates: [-98.638165, 29.446055]
+        }, {
+            name: "Seoul Food",
+            coordinates: [-98.429527, 29.486555]
+        }, {
+            name: "Taquiots West Ave",
+            coordinates: [-98.52572, 29.486375]
+        }, {
+            name: "Pho Kim Long",
+            coordinates: [-98.491401, 29.470555]
+        }, {
+            name: "Thai Esan & Noodle House",
+            coordinates: [-98.588382, 29.534565]
+        }, {
+            name: "2M Smokehouse",
+            coordinates: [-98.40465, 29.38156]
+        }, {
+            name: "Lupe Tortilla",
+            coordinates: [-98.59992, 29.6125],
+            image: url
+        }
+    ];
+
+    foodSpots.forEach(function(foodSpot) {
+        let marker = new mapboxgl.Marker()
+            .setLngLat(foodSpot.coordinates)
+            .addTo(MAP)
+
+        let popup = new mapboxgl.Popup()
+            .setHTML(foodSpot.name)
+        marker.setPopup(popup)
+            .addTo(MAP)
+    })
+
+
+    // Wings// Add markers to the map.
+    // geocode("4553 N Loop 1604 W, San Antonio, TX 78249", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const WINGS = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the wings marker
+    //     const WING_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best Wings in San Antonio!")
+    //     WINGS.setPopup(WING_POPUP)
+    // });
+
     //Burgers// Add markers to the map.
-    geocode("7431 Northwest Loop 410 #115, San Antonio, TX 78245", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const BURGERS = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Burgers marker
-        const BURGER_POPUP = new mapboxgl.Popup()
-            .setHTML("Best Burgers in San Antonio!")
-        BURGERS.setPopup(BURGER_POPUP)
-    });
-    //Korean Fried Chicken// Add markers to the map.
-    geocode("2456 Harry Wurzbach Rd, San Antonio, TX 78209", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const KOREAN_FRIED_CHICKEN = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Korean Fried Chicken marker
-        const FRIED_CHICKEN_POPUP = new mapboxgl.Popup()
-            .setHTML("Best Korean Fried Chicken in San Antonio!")
-        KOREAN_FRIED_CHICKEN.setPopup(FRIED_CHICKEN_POPUP)
-    });
-    //Tacos// Add markers to the map.
-    geocode("2818 West Ave, San Antonio, TX 78201", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const TAQUITOS_WEST_AVE = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Tacquitos West Ave marker
-        const TACOS_POPUP = new mapboxgl.Popup()
-            .setHTML("Best street tacos in San Antonio!")
-        TAQUITOS_WEST_AVE.setPopup(TACOS_POPUP)
-    });
-    //Pho// Add markers to the map.
-    geocode("4230 McCullough Ave #2, San Antonio, TX 78212", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const PHO_KIM_LONG = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Pho Kim Long marker
-        const PHO_POPUP = new mapboxgl.Popup()
-            .setHTML("Best pho in San Antonio!")
-        PHO_KIM_LONG.setPopup(PHO_POPUP)
-    });
-    //Thai// Add markers to the map.
-    geocode("Suite 109, 3266, 9820 Huebner Rd, San Antonio, TX 78240", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const THAI_ESAN_NOODLE = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Thai Esan Noodle marker
-        const THAI_POPUP = new mapboxgl.Popup()
-            .setHTML("Best Thai food in San Antonio!")
-        THAI_ESAN_NOODLE.setPopup(THAI_POPUP)
-    });
-    //BBQ// Add markers to the map.
-    geocode("2731 S Ww White Rd, San Antonio, TX 78222", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const TWO_M_SMOKEHOUSE = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the 2M Smokehouse marker
-        const BBQ_POPUP = new mapboxgl.Popup()
-            .setHTML("Best BBQ in San Antonio!")
-        TWO_M_SMOKEHOUSE.setPopup(BBQ_POPUP)
-    });
-    //Fajitas// Add markers to the map.
-    geocode("5838 Worth Pkwy, San Antonio, TX 78257", MAPBOX_API_KEY).then
-    (function(data) {
-        console.log(data);
-        const LUPE_TORTILLA = new mapboxgl.Marker()
-            .setLngLat(data)
-            .addTo(MAP);
-        // Add the popup to the Lupe Tortilla marker
-        const FAJITAS_POPUP = new mapboxgl.Popup()
-            .setHTML("Best Fajitas in San Antonio!")
-        LUPE_TORTILLA.setPopup(FAJITAS_POPUP)
-    });
+    // geocode("7431 Northwest Loop 410 #115, San Antonio, TX 78245", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const BURGERS = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Burgers marker
+    //     const BURGER_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best Burgers in San Antonio!")
+    //     BURGERS.setPopup(BURGER_POPUP)
+    // });
 
+    // //Korean Fried Chicken// Add markers to the map.
+    // geocode("2456 Harry Wurzbach Rd, San Antonio, TX 78209", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const KOREAN_FRIED_CHICKEN = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Korean Fried Chicken marker
+    //     const FRIED_CHICKEN_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best Korean Fried Chicken in San Antonio!")
+    //     KOREAN_FRIED_CHICKEN.setPopup(FRIED_CHICKEN_POPUP)
+    // });
 
+    // //Tacos// Add markers to the map.
+    // geocode("2818 West Ave, San Antonio, TX 78201", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const TAQUITOS_WEST_AVE = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Tacquitos West Ave marker
+    //     const TACOS_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best street tacos in San Antonio!")
+    //     TAQUITOS_WEST_AVE.setPopup(TACOS_POPUP)
+    // });
 
+    // //Pho// Add markers to the map.
+    // geocode("4230 McCullough Ave #2, San Antonio, TX 78212", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const PHO_KIM_LONG = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Pho Kim Long marker
+    //     const PHO_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best pho in San Antonio!")
+    //     PHO_KIM_LONG.setPopup(PHO_POPUP)
+    // });
 
+    // //Thai// Add markers to the map.
+    // geocode("Suite 109, 3266, 9820 Huebner Rd, San Antonio, TX 78240", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const THAI_ESAN_NOODLE = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Thai Esan Noodle marker
+    //     const THAI_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best Thai food in San Antonio!")
+    //     THAI_ESAN_NOODLE.setPopup(THAI_POPUP)
+    // });
+
+    // //BBQ// Add markers to the map.
+    // geocode("2731 S Ww White Rd, San Antonio, TX 78222", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const TWO_M_SMOKEHOUSE = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the 2M Smokehouse marker
+    //     const BBQ_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best BBQ in San Antonio!")
+    //     TWO_M_SMOKEHOUSE.setPopup(BBQ_POPUP)
+    // });
+
+    // //Fajitas// Add markers to the map.
+    // geocode("5838 Worth Pkwy, San Antonio, TX 78257", MAPBOX_API_KEY).then
+    // (function(data) {
+    //     console.log(data);
+    //     const LUPE_TORTILLA = new mapboxgl.Marker()
+    //         .setLngLat(data)
+    //         .addTo(MAP);
+    //     // Add the popup to the Lupe Tortilla marker
+    //     const FAJITAS_POPUP = new mapboxgl.Popup()
+    //         .setHTML("Best Fajitas in San Antonio!")
+    //     LUPE_TORTILLA.setPopup(FAJITAS_POPUP)
+    // });
 
 </script>
 
