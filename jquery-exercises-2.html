@@ -8,10 +8,12 @@
 <h1 id="codeup">Hello Codeup</h1>
 
 <h1>Example Page</h1>
+
 <div class="important">
-    <h3>NOTICE</h3>
+    <h2>NOTICE</h2>
     <p>This is an important message!</p>
 </div>
+
 <div class="not-important">
     <h2>Lorem Ipsum</h2>
     <p>
@@ -20,29 +22,56 @@
 </div>
 <p class="important">This is also very important.</p>
 
+<div class="not-important">
+    <h1 id="my-foods">My Favorite Foods</h1>
+    <ul id="my-list" class="favorite-foods-list">
+        <li id="my-num-one" class="list-item">Steak</li>
+        <li class="list-item">Salmon</li>
+        <li class="list-item">Oysters</li>
+        <li class="list-item">Pho</li>
+    </ul>
+</div>
+
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(function () {
 
         //Document Ready
-        alert('DOM has finished loading!');
+        // alert('DOM has finished loading!');
 
         //ID Selector
-        let contents = $('#codeup').html();
-        alert(contents)
+        // let contents = $('#codeup').html();
+        // alert(contents)
 
         //Class Selector
-        $('.important').css('background-color', 'yellow');
+        // $('.important').css('background-color', 'yellow');
 
         //Element Selector
-        $('p').css('font-size', '14px');
+        // $('p').css('font-size', '14px');
 
         //Multiple Selector
-        $('.important, p').css('background-color', '#FF0');
+        // $('.important, p').css('background-color', '#FF0');
 
         //All Selector
-        $("*").css('border', '1px solid #F00');
+        // $("*").css('border', '1px solid #F00');
 
+        //Exercises
+        //commented the first portion out
+        // let content = $('#my-foods').html();
+        // alert(content)
+        //
+        // let content2 = $('#my-num-one').html();
+        // alert(content2)
+
+        $('.list-item').css('border', '1px solid #F00');
+
+        $('li').css('font-size', '20px');
+
+        $('h1, p, li').css('background-color', '#FF0')
+
+        // let h1s = $('h1').filter().text();
+        // alert(h1s)
+        alert($('h1').html());
 
 
 
