@@ -26,7 +26,7 @@
 </p>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
 
@@ -63,10 +63,10 @@
             if (i % 2 === 0) {
                 listItems[i].style.color = '#808080';
             }
-                if (listItems[i].getAttribute('data-dbid') === '1') {
-                    listItems[i].style.color = '#0000FF';
-                }
+            if (listItems[i].getAttribute('data-dbid') === '1') {
+                listItems[i].style.color = '#0000FF';
             }
+        }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
@@ -77,7 +77,22 @@
 
         subParagraphs[0].innerHTML = 'Mission Accomplished';
 
+        //JQuery Introduction
+        //Document Ready
+
+        // window.onload = function () {
+        //     alert('Window is finished loading!');
+        // }
+
     })();
+</script>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    $(function () {
+
+        alert('The DOM has finished loading!');
+
+    });
 </script>
 </body>
 </html>
