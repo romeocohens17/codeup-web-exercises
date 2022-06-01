@@ -63,15 +63,35 @@
         // let content2 = $('#my-num-one').html();
         // alert(content2)
 
-        $('.list-item').css('border', '1px solid #F00');
-
-        $('li').css('font-size', '20px');
-
-        $('h1, p, li').css('background-color', '#FF0')
+        // $('.list-item').css('border', '1px solid #F00');
+        //
+        // $('li').css('font-size', '20px');
+        //
+        // $('h1, p, li').css('background-color', '#FF0')
 
         // let h1s = $('h1').filter().text();
         // alert(h1s)
-        alert($('h1').html());
+        // alert($('h1').html());
+
+        //Mouse Events
+        //Click()
+        // $('#codeup').click(function () {
+        //     alert('h1 with id codeup was clicked');
+        // });
+
+        //dblclick()
+        $('#codeup').dblclick(function () {
+            alert('h1 with id codeup was double clicked');
+        });
+
+        $('#codeup').hover(
+            function () {
+                $(this).css({'background-color': '#0015ff','color': '#FFF'});
+        },
+            function (){
+                $(this).css({'background-color': '#f80202', 'color': '#000'});
+            }
+        );
 
 
 
