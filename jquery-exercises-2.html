@@ -84,19 +84,20 @@
             alert('h1 with id codeup was double clicked');
         });
 
-        $('#codeup').hover(
-            function () {
-                $(this).css({'background-color': '#0015ff','color': '#FFF'});
-        },
-            function (){
-                $(this).css({'background-color': '#f80202', 'color': '#000'});
-            }
-        );
-
         $('p').dblclick(
             function () {
                 $(this).css('font-size', '18px');
         });
+
+        //hover()
+        $('#codeup').hover(
+            function () {
+                $(this).css({'background-color': '#0015ff','color': '#FFF'});
+            },
+            function (){
+                $(this).css({'background-color': '#f80202', 'color': '#000'});
+            }
+        );
 
         $('li').hover(
             function () {
@@ -106,6 +107,8 @@
                 $(this).css('color', '#000');
             }
         );
+
+
 
 
 
