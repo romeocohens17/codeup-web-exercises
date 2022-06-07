@@ -258,5 +258,7 @@ function objectFromString(str) {
 console.log(objectFromString("tacocat"));
 console.log(objectFromString("dip"));
 
-
+//07-07
+//Making a fetch request
+fetch("https://quotes.rest/qod").then(res => res.json()).then(res => console.log(res))
 
