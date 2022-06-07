@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Library</title>
+</head>
+<body>
+
+<h1>RESTful API Requests</h1>
+
+<form>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title">
+    <label for="artist">Artist: </label>
+    <input type="text" id="artist" name="artist">
+    <button id="addSong">Add Song</button>
+</form>
+
+<div id="library"></div>
+
+<script>
+    "use strict";
+
+    //fetch all songs
+    // const GET_ALL_SONGS = () => {
+    //     const URL = "";
+    //     return fetch(URL).then(res => res.json());
+    // }
+
+    //CREATE SOME ELEMENTS
+    // const RENDER_SONGS = () => {
+        //GET_ALL_SONGS().then(data) => {
+        // let songCards = data.map(song => {
+        //     return `
+        //     <div>
+        //     <h3>Title: ${song.title}</h3>
+        //     <p>Artist: ${song.artist}</p>
+        //     <button data-id="${song.id}">Edit</button>
+        //     <button data-id="${song.id}">Delete</button>
+        //     </div>
+        //     `
+        // })
+        // document.getElementById("library").innerHTML = songCards.join("");
+        // })
+    // }
+    // RENDER_SONGS()
+
+
+    //FETCH A SONG BY ID
+    // const GET_SONG_BY_ID = (id) => {
+    //     const URL = '';
+    //     return fetch(URL).then(res => res.json()).then(res => console.log(res));
+    // }
+    // GET_SONG_BY_ID(3)
+
+
+    //EDIT (PUT VS PATCH)
+    //PUT method - requires you to resubmit the entire entity(object).
+    //PATCH method - only edits properties that currently exist in the entity(object).
+
+    //PUT method
+  //   const EDIT_SONG = (song) => {
+  //       let options = {
+  //           method: "PUT",
+  //           headers: {
+  //               //Content-Type: tells the server what type of data we are sending with our request.
+  //               'Content-Type': 'application/json' //Establishing the format in which we send the data.
+  //           },
+  //           body: JSON.stringify(song) //Convert the JS object into a JSON string before sending it to the server.
+  //       }
+  //       return fetch(`${URL}/${song.id}`, options).then(resp.json())
+  //   }
+  //
+  //   let editedSong = {
+  //       id: 1,
+  //       title: "Dirty Deeds",
+  //       artist: "ACDC"
+  //   }
+  //
+  // EDIT_SONG(editedSong)
+
+    //PATCH method
+    // const EDIT_SONG = (song) => {
+    //     let options = {
+    //         method: "PATCH",
+    //         headers: {
+    //             //Content-Type: tells the server what type of data we are sending with our request.
+    //             'Content-Type': 'application/json' //Establishing the format in which we send the data.
+    //         },
+    //         body: JSON.stringify(song) //Convert the JS object into a JSON string before sending it to the server.
+    //     }
+    //     return fetch(`${URL}/${song.id}`, options).then(resp.json())
+    // }
+    //
+    // let editedSong = {
+    //     id: 1,
+    //     title: "TNT",
+    // }
+    //
+    // EDIT_SONG(editedSong)
+
+
+    //POST REQUEST
+    const ADD_SONG = (songObj) => {
+        const URL = '';
+        let options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(songObj)
+        }
+        return fetch(URL, options).then(res => res.json()).then(result => console.log("You've successfully created a new song!"), result)
+    }
+
+    //Whenever the "Add Song" button is clicked, create a new object based on the input fields.
+    document.getElementById("addSong").addEventListener('click', function (e) {
+        e.preventDefault();
+        let newSong = {
+            title: document.getElementById("title").value,
+            artist: document.getElementById("artist").value
+        }
+        ADD_SONG(newSong).then((res) => {
+            RENDER_SONGS();
+        });
+    });
+
+    //DELETE METHOD
+    const DELETE_SONG = (id) => {
+        const URL = "";
+        let options = {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        return fetch(`${URL}/${id}`, options).then(() => console.log("The song has been deleted successfully.")).then(RENDER_SONGS);
+    }
+    DELETE_SONG(12)
+
+</script>
+
+</body>
+</html>
