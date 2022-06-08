@@ -79,25 +79,25 @@
   //
   // EDIT_SONG(editedSong)
 
-    //PATCH method
-    // const EDIT_SONG = (song) => {
-    //     let options = {
-    //         method: "PATCH",
-    //         headers: {
-    //             //Content-Type: tells the server what type of data we are sending with our request.
-    //             'Content-Type': 'application/json' //Establishing the format in which we send the data.
-    //         },
-    //         body: JSON.stringify(song) //Convert the JS object into a JSON string before sending it to the server.
-    //     }
-    //     return fetch(`${URL}/${song.id}`, options).then(resp.json())
-    // }
-    //
-    // let editedSong = {
-    //     id: 1,
-    //     title: "TNT",
-    // }
-    //
-    // EDIT_SONG(editedSong)
+    PATCH method
+    const EDIT_SONG = (song) => {
+        let options = {
+            method: "PATCH",
+            headers: {
+                //Content-Type: tells the server what type of data we are sending with our request.
+                'Content-Type': 'application/json' //Establishing the format in which we send the data.
+            },
+            body: JSON.stringify(song) //Convert the JS object into a JSON string before sending it to the server.
+        }
+        return fetch(`${URL}/${song.id}`, options).then(resp => resp.json())
+    }
+
+    let editedSong = {
+        id: 1,
+        title: "TNT",
+    }
+
+    EDIT_SONG(editedSong)
 
 
     //POST REQUEST
