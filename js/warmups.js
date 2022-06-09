@@ -262,3 +262,5 @@ console.log(objectFromString("dip"));
 //Making a fetch request
 fetch("https://quotes.rest/qod").then(res => res.json()).then(res => console.log(res))
 
+
+
